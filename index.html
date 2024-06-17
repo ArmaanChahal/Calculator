@@ -10,32 +10,62 @@
 <body>
     <div id="calculator" class="container">
         <input id="display" class="form-control" readonly>
-        <div id="keys">
+        <div id="keys-basic">
             <button class="key btn btn-light" onclick="clearDisplay()">C</button>
-            <button class="key btn btn-light" class="operator-btn()" onclick="appendToDisplay(' +/- ')">+/-</button>
-            <button class="key btn btn-light" class="operator-btn()" onclick="appendToDisplay(' % ')">%</button>
-            <button class="key btn btn-warning" class="operator-btn()" onclick="appendToDisplay(' / ')">÷</button>
+            <button class="key btn btn-light" onclick="appendToDisplay(' +/- ')">+/-</button>
+            <button class="key btn btn-light" onclick="appendToDisplay(' % ')">%</button>
+            <button class="key btn btn-warning" onclick="appendToDisplay(' ÷ ')">÷</button>
 
             <button class="key btn btn-secondary" onclick="appendToDisplay('7')">7</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('8')">8</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('9')">9</button>
-            <button class="key btn btn-warning" class="operator-btn()" onclick="appendToDisplay(' * ')">×</button>
+            <button class="key btn btn-warning" onclick="appendToDisplay(' × ')">×</button>
 
             <button class="key btn btn-secondary" onclick="appendToDisplay('4')">4</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('5')">5</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('6')">6</button>
-            <button class="key btn btn-warning" class="operator-btn()" onclick="appendToDisplay(' - ')">-</button>
+            <button class="key btn btn-warning" onclick="appendToDisplay(' - ')">-</button>
 
             <button class="key btn btn-secondary" onclick="appendToDisplay('1')">1</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('2')">2</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('3')">3</button>
-            <button class="key btn btn-warning" class="operator-btn()" onclick="appendToDisplay(' + ')">+</button>
+            <button class="key btn btn-warning" onclick="appendToDisplay(' + ')">+</button>
 
-            <button class="key btn btn-secondary" onclick="flipDisplay()">Ф</button>
-            <button class="key btn btn-secondary" onclick="appendToDisplay('0')">0</button>
+            <button class="key btn btn-secondary key-0" onclick="appendToDisplay('0')">0</button>
             <button class="key btn btn-secondary" onclick="appendToDisplay('.')">.</button>
-            <button class="key btn btn-warning " onclick="calculate()">=</button>
+            <button class="key btn btn-warning" onclick="calculate()">=</button>
+        </div>
 
+        <div id="keys-scientific" class="d-none">
+            <button class="key btn btn-info arc" onclick="appendToDisplay('Math.asin(')">sin⁻¹</button>
+            <button class="key btn btn-info arc" onclick="appendToDisplay('Math.acos(')">cos⁻¹</button>
+            <button class="key btn btn-info arc" onclick="appendToDisplay('Math.atan(')">tan⁻¹</button>
+            <button class="key btn btn-light" onclick="clearDisplay()">C</button>
+            
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.sin(')">sin</button>
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.cos(')">cos</button>
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.tan(')">tan</button>
+
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.log(')">log</button>
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.sqrt(')">√</button>
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.pow(')">^</button>
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.PI')">π</button>
+            <button class="key btn btn-info" onclick="appendToDisplay('Math.E')">e</button>
+            <button class="key btn btn-secondary" onclick="appendToDisplay('(')">(</button>
+            <button class="key btn btn-secondary" onclick="appendToDisplay(')')">)</button>
+            <button class="key btn btn-secondary" onclick="appendToDisplay(',')">,</button>
+            <button class="key btn btn-warning" onclick="switchDegreeRadian()">RAD</button>
+
+            <button class="key btn btn-secondary key-0" onclick="appendToDisplay('0')">0</button>
+            <button class="key btn btn-secondary" onclick="appendToDisplay('.')">.</button>
+            <button class="key btn btn-warning" onclick="calculate()">=</button>
+        </div>
+
+        <button class="btn btn-primary mt-3" onclick="toggleMode()">⇆</button>
+        <button class="btn btn-secondary mt-3" onclick="showHistory()">History</button>
+
+        <div id="history" class="d-none mt-3">
+            <ul id="history-list" class="list-group"></ul>
         </div>
     </div>
 
