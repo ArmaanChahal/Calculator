@@ -12,11 +12,14 @@ function clearDisplay() {
 
 function calculate() {
     try {
+        // Log the expression being evaluated
+        console.log("Expression: ", display.value);
         const result = eval(display.value.replace(/×/g, '*').replace(/÷/g, '/'));
         display.value = result;
         history.push(display.value);
         updateHistory();
     } catch (error) {
+        console.error("Calculation error: ", error);
         display.value = "Error";
     }
 }
