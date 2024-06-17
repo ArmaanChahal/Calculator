@@ -26,7 +26,7 @@ body {
     text-align: right;
 }
 
-#keys {
+#keys-basic, #keys-scientific {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -68,4 +68,22 @@ body {
 
 .btn-warning:active {
     background-color: #ffa500;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:active {
+    background-color: #138496;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.arc {
+    font-size: small;
+    padding: 0;
 }
